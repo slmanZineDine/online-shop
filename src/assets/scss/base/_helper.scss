@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+/*=============== REUSEABLE CLASSES ===============*/
+.container {
+   padding: 0 15px;
+   margin-inline: auto;
+}
+.section {
+   padding-block: 6rem;
+}
+.section-title {
+   color: $title-color;
+   margin-bottom: 2.5rem;
+}
+.sub-text {
+   color: $primary-color;
+}
+.main-section {
+   padding-block: calc($header-height + 16px) 4rem;
+}
+.btn {
+   display: block;
+   background-color: $primary-color;
+   color: #fff;
+   font-weight: 600;
+   padding: 1rem;
+   border-radius: 0.4rem;
+   width: fit-content;
+   margin-inline: auto;
+   margin-top: 3rem;
+   cursor: pointer;
+   .icon {
+      margin-right: 1rem;
+   }
+}
+svg {
+   fill: $primary-color;
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== EXTRA SMALL ===============*/
+@media (max-width: 576px) {
+   .main-section {
+      padding-top: $header-height;
+   }
+}
+/*=============== SMALL ===============*/
+@media (min-width: 768px) {
+   .container {
+      width: 750px;
+   }
+}
+/*=============== MEDIUM ===============*/
+@media (min-width: 992px) {
+   .container {
+      width: 970px;
+   }
+}
+/*=============== LARGE ===============*/
+@media (min-width: 1200px) {
+   .container {
+      width: 1170px;
+   }
+}

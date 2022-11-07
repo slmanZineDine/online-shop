@@ -1,0 +1,104 @@
+@use "../abstracts/" as *;
+/*=============== ABOUT PAGE ===============*/
+.about-page {
+   .section-title {
+      text-align: center;
+      font-size: var(--biggest-font-size);
+      margin-bottom: 6rem;
+   }
+   .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      row-gap: 4rem;
+      .service {
+         position: relative;
+         border: 1px solid $text-color;
+         border-radius: 0.3rem;
+         padding: 1rem;
+         text-align: center;
+         &:hover {
+            box-shadow: rgba(99, 99, 99, 0.5) 0px 5px 8px 0px;
+         }
+         .icon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1px solid $text-color;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 1.5rem;
+            background-color: #fff;
+            color: $primary-color;
+            font-size: var(--icon-font-size);
+         }
+         .title {
+            margin-top: 3rem;
+            color: $title-color;
+         }
+         .text {
+            margin-block: 1rem;
+            color: $text-color;
+            line-height: 1.5;
+            font-size: var(--normal-font-size);
+            word-break: break-all;
+         }
+         .read-more-btn {
+            background-color: $btn-color-fri;
+            color: $primary-color;
+            margin-top: 0;
+         }
+      }
+   }
+   .stats {
+      .container {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+         gap: 1.5rem;
+         background-color: $third-color;
+         padding-block: 2.5rem;
+         .box {
+            position: relative;
+            padding-block: 2rem;
+            text-align: center;
+            background-color: #fff;
+            &::before,
+            &::after {
+               content: "";
+               position: absolute;
+               height: 0;
+               width: 4px;
+               background-color: $primary-color;
+               transition: height 0.4s;
+            }
+            &::before {
+               bottom: 0;
+               left: 0;
+            }
+            &::after {
+               top: 0;
+               right: 0;
+            }
+            &:hover {
+               &::before,
+               &::after {
+                  height: 100%;
+               }
+            }
+            .number {
+               font-size: var(--biggest-font-size);
+               color: #000;
+               margin-bottom: 1.5rem;
+            }
+            .title {
+               font-size: var(--h3-font-size);
+               color: $primary-color;
+               font-style: italic;
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== Medium ===============*/

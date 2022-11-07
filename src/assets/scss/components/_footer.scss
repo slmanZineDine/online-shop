@@ -1,0 +1,120 @@
+@use "../abstracts/" as *;
+/*=============== FOOTER ===============*/
+.footer {
+   padding-top: 4rem;
+   .footer-list {
+      @include flex(flex-start, space-between, 2rem);
+      .connection {
+         width: 30%;
+         padding-bottom: 1rem;
+         border-bottom: 1px solid $text-color;
+         .title {
+            font-size: var(--biggest-font-size);
+            margin-bottom: 2rem;
+         }
+         .social {
+            .link {
+               color: $text-color;
+               font-size: var(--h3-font-size);
+               margin-right: 1rem;
+               transition: color 0.4s;
+               &:hover {
+                  color: $primary-color;
+               }
+            }
+            margin-bottom: 1rem;
+         }
+         .text {
+            @include flex(center, flex-start, 1rem);
+            margin-bottom: 0.7rem;
+            max-width: 100%;
+            color: $text-color;
+            font-size: var(--normal-font-size);
+            .icon {
+               color: $primary-color;
+               width: 16px;
+               font-size: var(--h3-font-size);
+            }
+         }
+      }
+      .content {
+         width: 65%;
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+         .box {
+            .title {
+               color: $title-color;
+               margin-bottom: 1.5rem;
+            }
+            .text {
+               color: $text-color;
+               margin-bottom: 1rem;
+            }
+         }
+      }
+   }
+   .website-info {
+      @include flex(center, space-between);
+      padding-block: 1rem 2rem;
+      border-top: 1px solid $text-color;
+      color: $text-color;
+      font-size: var(--normal-font-size);
+      .icon-heart {
+         color: red;
+      }
+   }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* MEDIUM SCREEN */
+@media (max-width: 992px) {
+   .footer .footer-list .content {
+      @include flex(center, flex-start, 0.4rem);
+      flex-direction: column;
+   }
+   .footer .footer-list .content .box {
+      @include flex(center, flex-start, 0.4rem);
+      flex-wrap: wrap;
+      width: 100%;
+   }
+   .footer .footer-list .content .box .title {
+      width: 100%;
+   }
+   .footer .footer-list .content .box:not(:first-of-type) .title {
+      margin-top: 0.5rem;
+   }
+   .footer .footer-list .content .box .text {
+      margin-bottom: 0;
+   }
+   .footer .footer-list .content .box .text:not(:last-of-type) {
+      border-right: 1px solid $text-color;
+      padding-right: 0.5rem;
+   }
+   .footer .footer-list .content .box .image {
+      width: 200px;
+   }
+}
+/* SMALL SCREEN*/
+@media (max-width: 768px) {
+   .footer .website-info {
+      display: block;
+      text-align: center;
+   }
+}
+/* EXTRA SMALL SCREEN */
+@media (max-width: 576px) {
+   .footer .footer-list {
+      flex-direction: column;
+      text-align: center;
+   }
+   .footer .footer-list .connection,
+   .footer .footer-list .content {
+      width: 100%;
+   }
+   .footer .footer-list .content .image {
+      margin-inline: auto;
+   }
+   .footer .website-info {
+      padding-bottom: calc($header-height + 3rem);
+   }
+}

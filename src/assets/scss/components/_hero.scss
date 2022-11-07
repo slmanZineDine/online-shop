@@ -1,0 +1,76 @@
+@use "../abstracts/" as *;
+
+.hero {
+   height: calc(100vh + $header-height);
+   background-image: linear-gradient(180deg, #d4eee2, #f4eee2);
+   .container {
+      @include flex(center, center);
+      height: 100%;
+      .content {
+         @include flex(center, space-between);
+         .info {
+            width: 50%;
+            align-self: flex-start;
+            .title {
+               color: $title-color;
+               font-size: 3.5rem;
+               letter-spacing: 3px;
+               margin-bottom: 2rem;
+               span {
+                  color: $primary-color;
+               }
+            }
+            .text {
+               color: $title-color;
+               line-height: 1.5;
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== MEDIUM ===============*/
+@media (max-width: 768px) {
+   .hero .container .content {
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: 3rem;
+      padding-top: 2rem;
+   }
+   .hero .container .content .info {
+      align-self: flex-start;
+      width: 100%;
+   }
+   .hero .container .content .info .title {
+      font-size: 3rem;
+   }
+   .hero .container .content .info .text {
+      width: 80%;
+   }
+   .hero .container .content .img {
+      width: 450px;
+   }
+}
+/*=============== SMALL ===============*/
+@media (max-width: 576px) {
+   .hero {
+      height: 100vh;
+   }
+   .hero .container .content {
+      padding-top: 0;
+   }
+   .hero .container .content .info {
+      align-self: flex-start;
+      width: 100%;
+   }
+   .hero .container .content .info .title {
+      font-size: 2.3rem;
+   }
+   .hero .container .content .info .text {
+      width: 100%;
+      font-size: var(--normal-font-size);
+   }
+   .hero .container .content .img {
+      width: auto;
+   }
+}

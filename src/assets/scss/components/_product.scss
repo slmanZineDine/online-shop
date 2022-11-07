@@ -1,0 +1,85 @@
+@use "../abstracts/" as *;
+.products-list {
+   .product {
+      padding: 0.8rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      transition: all 0.4s;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+         box-shadow: rgba(99, 99, 99, 0.8) 0px 5px 10px 0px;
+         .image {
+            &::after {
+               width: 100%;
+               height: 100%;
+            }
+         }
+      }
+      .image {
+         position: relative;
+         margin-bottom: 1.5rem;
+         height: 350px;
+         @include flex(center, center);
+         &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgb(255 255 255 / 20%);
+            z-index: 15;
+            transition: all 0.4s;
+         }
+         img {
+            width: 250px;
+            max-height: 100%;
+         }
+      }
+      .title {
+         font-size: var(--h3-font-size);
+         color: $title-color;
+      }
+      .rating {
+         @include flex(center, flex-start, 0.7rem);
+         margin-block: 1.2rem;
+         .stars {
+            color: #fb9419;
+         }
+         .rate-num {
+            color: $title-color;
+            font-size: var(--normal-font-size);
+         }
+      }
+      .info {
+         @include flex(center, space-between);
+         .add-btn {
+            padding: 0.6rem 1rem;
+            @include flex(center, center, 0.5rem);
+            color: $primary-color;
+            font-weight: $font-bold;
+            font-size: var(--normal-font-size);
+            background-color: #d4eee2;
+            width: 6rem;
+            border-radius: 0.4rem;
+            overflow: hidden;
+            &:hover {
+               .icon {
+                  transform: translate(0);
+               }
+            }
+            .icon {
+               transform: translate(-50px);
+               transition: transform 0.5s;
+            }
+         }
+         .price {
+            align-self: flex-end;
+            font-size: var(--h3-font-size);
+            color: $title-color;
+            font-weight: $font-bold;
+         }
+      }
+   }
+}

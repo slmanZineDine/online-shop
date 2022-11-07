@@ -1,0 +1,76 @@
+@use "../abstracts/" as *;
+.popular {
+   .container {
+      @include flex(center, space-between, 1rem);
+      .top-selling {
+         width: 48%;
+      }
+      .trending-products {
+         width: 48%;
+      }
+      .box {
+         @include flex(space-between, center, 1.5rem);
+         flex-direction: column;
+         .product {
+            padding: 0.8rem;
+            height: 175px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            transform: skewY(-3deg);
+            transition: all 0.3s;
+            cursor: pointer;
+            @include flex(center, flex-start, 1rem);
+            .image {
+               @include flex(center, center);
+               height: 150px;
+               width: 150px;
+               transform: rotate(2deg);
+               img {
+                  max-height: 100%;
+               }
+            }
+            .content {
+               transform: rotate(2deg);
+            }
+            .title {
+               font-size: var(--h3-font-size);
+               color: $title-color;
+            }
+            .rating {
+               @include flex(center, flex-start, 0.7rem);
+               margin-block: 1rem;
+               .stars {
+                  color: #fb9419;
+               }
+               .rate-num {
+                  color: $title-color;
+                  font-size: var(--normal-font-size);
+               }
+            }
+            .info {
+               .price {
+                  font-size: var(--normal-font-size);
+                  color: $title-color;
+                  font-weight: $font-bold;
+               }
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== MEDIUM ===============*/
+@media (max-width: 768px) {
+   .popular .container {
+      flex-direction: column;
+      row-gap: 5rem;
+   }
+   .popular .container .top-selling {
+      width: 100%;
+   }
+   .popular .container .trending-products {
+      width: 100%;
+   }
+   .popular .container .box .product .image {
+      width: 100px;
+   }
+}

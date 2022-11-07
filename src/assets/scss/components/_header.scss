@@ -1,0 +1,141 @@
+@use "../abstracts" as *;
+/*=============== HEADER COMPONENT ===============*/
+.header {
+   position: fixed;
+   z-index: $z-fixed;
+   width: 100%;
+   background-color: $body-color;
+   .nav {
+      height: $header-height;
+      position: relative;
+      @include flex(center, space-between, 0.5rem);
+      .logo {
+         @include flex(center, space-between, 0.8rem);
+         width: 100px;
+         font-size: var(--biggest-font-size);
+         font-weight: $font-bold;
+         color: $title-color;
+      }
+      .menu {
+         @include flex(center, space-between, 0.5rem);
+         .links {
+            @include flex(center, space-between, 0.5rem);
+            .link {
+               padding: 1rem;
+               font-weight: $font-semi-bold;
+               font-size: var(--h3-font-size);
+               color: $text-color;
+               white-space: nowrap;
+               transition: color 0.4s;
+               &:hover {
+                  color: $title-color;
+               }
+               svg {
+                  display: none;
+                  font-size: var(--icon-font-size);
+               }
+            }
+         }
+         .close {
+            display: none;
+            font-size: var(--icon-font-size);
+         }
+      }
+      .menu.show-menu {
+         bottom: 2rem;
+      }
+      .menu-buttons {
+         font-size: var(--icon-font-size);
+         cursor: pointer;
+         .cart {
+            :first-child {
+               color: $text-color;
+               position: relative;
+               transition: color 0.4s;
+               &:hover {
+                  color: $title-color;
+               }
+               .circle {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  border-radius: 50%;
+                  transform: translate(50%, -50%);
+                  display: block;
+                  width: 23px;
+                  height: 23px;
+                  background-color: red;
+                  color: #fff;
+                  @include flex(center, center);
+                  font-size: 0.94rem;
+               }
+            }
+         }
+         .menu-toggle {
+            display: none;
+         }
+      }
+   }
+}
+.scroll-header {
+   box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== SMALL ===============*/
+@media (max-width: 576px) {
+   .header {
+      bottom: 1.5rem;
+      border-radius: 2rem;
+      background-color: none;
+      .nav {
+         .logo {
+            img {
+               width: 80px;
+            }
+         }
+         .menu {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: -60%;
+            width: 88%;
+            margin-inline: auto;
+            padding: 2rem 1.5rem 4rem;
+            background-color: $body-color;
+            border-radius: 2rem;
+            justify-content: center;
+            transition: bottom 0.4s;
+            z-index: 10;
+            .links {
+               display: grid;
+               grid-template-columns: repeat(3, max-content);
+               gap: 1rem;
+
+               .link {
+                  @include flex(center, center, 0.5rem);
+                  flex-direction: column;
+                  padding: 0.5rem;
+                  svg {
+                     display: block;
+                  }
+               }
+            }
+            .close {
+               display: block;
+               position: absolute;
+               right: 1.5rem;
+               bottom: 1.6rem;
+               cursor: pointer;
+            }
+         }
+         .menu-buttons {
+            @include flex(center, space-between, 1rem);
+
+            .menu-toggle {
+               display: inline;
+            }
+         }
+      }
+   }
+}

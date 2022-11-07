@@ -1,0 +1,23 @@
+// Import of partial files
+
+// RULES
+@use "./abstracts";
+@use "./base";
+
+// COMPONENTS
+@use "./components/header";
+@use "./components/hero";
+@use "./components/shop";
+@use "./components/product";
+@use "./components/popular";
+@use "./components/intro";
+@use "./components/delivery";
+@use "./components/footer";
+
+// PAGES
+@use "./pages/cart";
+@use "./pages/about";
+@use "./pages/our-team";
+@use "./pages/contact";
+
+@use "./base/sweet-alert";

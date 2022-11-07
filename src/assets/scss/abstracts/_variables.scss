@@ -1,0 +1,53 @@
+@use "./mixins" as *;
+
+// ===================== COLORS =====================
+$body-color: #fcfcfd;
+$title-color: #253d4e;
+$text-color: #8a8f93;
+$primary-color: #27ca7d;
+$secondary-color: #d4eee2;
+$third-color: #f4eaea;
+$btn-color-fri: #d4eee2;
+$btn-color-sec: #f59758;
+// ===================== FONTS =====================
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+// ===================== FONTS FAMILY =====================
+$body-font: "Poppins", sans-serif;
+
+/*=============== VARIABLES ===============*/
+:root {
+   --biggest-font-size: 2rem;
+   --h2-font-size: 1.25rem;
+   --h3-font-size: 1.125rem;
+   --normal-font-size: 0.938rem;
+   --small-font-size: 0.813rem;
+   --smaller-font-size: 0.75rem;
+   --icon-font-size: 1.5rem;
+   @include respond-to("md", "max") {
+      --biggest-font-size: 1.5rem;
+   }
+   @media (max-width: 768px) {
+      --h3-font-size: 1rem;
+   }
+   // Responsive typography
+   //    @include respond-to("lg", "min") {
+   //       --biggest-font-size: 3rem;
+   //       --h2-font-size: 1.75rem;
+   //       --h3-font-size: 1.25rem;
+   //       --normal-font-size: 1rem;
+   //       --small-font-size: 0.875rem;
+   //       --smaller-font-size: 0.813rem;
+   //    }
+}
+// ===================== FONT WEIGHT =====================
+$font-semi-bold: 500;
+$font-bold: 600;
+
+// ===================== GLOBAL =====================
+$header-height: 80px;
+
+// ===================== Z INDEX =====================
+$z-normal: 1;
+$z-tooltip: 10;
+$z-fixed: 100;
