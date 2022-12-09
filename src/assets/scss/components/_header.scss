@@ -27,7 +27,9 @@
                color: $text-color;
                white-space: nowrap;
                transition: color 0.4s;
-               &:hover {
+
+               &:hover,
+               &.active {
                   color: $title-color;
                }
                svg {
@@ -130,7 +132,7 @@
             }
          }
          .menu-buttons {
-            @include flex(center, space-between, 1rem);
+            @include flex(center, space-between, 1.5rem);
 
             .menu-toggle {
                display: inline;

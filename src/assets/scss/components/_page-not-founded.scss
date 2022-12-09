@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+/*=============== NOT FOUNDED PAGE ===============*/
+.not-found-page {
+   .not-found {
+      text-align: center;
+      color: $primary-color;
+      margin-bottom: 4rem;
+   }
+}

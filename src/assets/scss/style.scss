@@ -13,11 +13,10 @@
 @use "./components/intro";
 @use "./components/delivery";
 @use "./components/footer";
+@use "./components/page-not-founded";
 
 // PAGES
 @use "./pages/cart";
 @use "./pages/about";
 @use "./pages/our-team";
 @use "./pages/contact";
-
-@use "./base/sweet-alert";

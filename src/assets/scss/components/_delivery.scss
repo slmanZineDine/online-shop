@@ -1,5 +1,5 @@
 @use "../abstracts/" as *;
-
+/*=============== DELIVERY ===============*/
 .delivery {
    .container {
       @include flex(flex-start, space-between, 0.5rem);

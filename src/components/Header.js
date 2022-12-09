@@ -6,6 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import logo from "../assets/img/logo.png";
@@ -36,10 +37,15 @@ const Header = () => {
                         onClick={(_) => setIsMenuShow(false)}
                      >
                         {e.path !== "/#shop" ? (
-                           <Link to={e.path} className="link">
+                           <NavLink
+                              to={e.path}
+                              className="link"
+                              end
+                              preventScrollReset={true}
+                           >
                               <FontAwesomeIcon icon={e.icon} />
                               {e.title}
-                           </Link>
+                           </NavLink>
                         ) : (
                            <HashLink to={e.path} className="link">
                               <FontAwesomeIcon icon={e.icon} />

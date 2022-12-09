@@ -182,7 +182,7 @@ svg {
   white-space: nowrap;
   transition: color 0.4s;
 }
-.header .nav .menu .links .link:hover {
+.header .nav .menu .links .link:hover, .header .nav .menu .links .link.active {
   color: #253d4e;
 }
 .header .nav .menu .links .link svg {
@@ -286,7 +286,7 @@ svg {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   .header .nav .menu-buttons .menu-toggle {
     display: inline;
@@ -715,6 +715,7 @@ svg {
     order: 0;
   }
 }
+/*=============== DELIVERY ===============*/
 .delivery .container {
   display: flex;
   align-items: flex-start;
@@ -919,6 +920,13 @@ svg {
     padding-bottom: calc(80px + 3rem);
   }
 }
+/*=============== NOT FOUNDED PAGE ===============*/
+.not-found-page .not-found {
+  text-align: center;
+  color: #27ca7d;
+  margin-bottom: 4rem;
+}
+
 /*=============== CART PAGE ===============*/
 .cart-page .extra-details .coupon .coupon-number, .cart-page .extra-details .shipping .state,
 .cart-page .extra-details .shipping .zip-code, .cart-page .extra-details .shipping .country {
