@@ -7,10 +7,18 @@ import {
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
-const Product = ({ item, hasBtn, cartView }) => {
+const Product = ({
+   item,
+   hasBtn,
+   cartView,
+   openProductView,
+   showDescription,
+}) => {
    const dispatch = useDispatch();
+   const navigate = useNavigate();
    const checkStars = (product) => {
       const RATE = product.rating.rate;
       let starCount = Math.trunc(RATE);
@@ -25,7 +33,12 @@ const Product = ({ item, hasBtn, cartView }) => {
    };
    return (
       <>
-         <div className="product">
+         <div
+            className="product"
+            onClick={(_) => {
+               if (openProductView) navigate(`/products/${item.id}`);
+            }}
+         >
             <div className="image">
                <img src={item.image} alt={item.title} />
             </div>
@@ -43,14 +56,18 @@ const Product = ({ item, hasBtn, cartView }) => {
                      </div>
                      <div className="info">
                         <p className="price">${item.price}</p>
+                        {showDescription ? (
+                           <p className="description">{item.description}</p>
+                        ) : null}
                         {hasBtn ? (
                            <button
                               className="add-btn"
-                              onClick={(_) => {
+                              onClick={(e) => {
+                                 e.stopPropagation();
                                  dispatch(addToCart(item));
                                  swal("Added To Cart", {
                                     buttons: false,
-                                    timer: 1000,
+                                    timer: 600,
                                     icon: "success",
                                  });
                               }}

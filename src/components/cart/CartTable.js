@@ -31,7 +31,11 @@ const CartTable = () => {
                {cart.map((product) => (
                   <tr className="trow" key={product.id}>
                      <td>
-                        <Product item={product} cartView={true} />
+                        <Product
+                           item={product}
+                           cartView={true}
+                           openProductView={true}
+                        />
                      </td>
                      <td>${product.price}</td>
                      <td className="quantity">

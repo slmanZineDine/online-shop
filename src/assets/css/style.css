@@ -28,6 +28,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -921,10 +922,16 @@ svg {
   }
 }
 /*=============== NOT FOUNDED PAGE ===============*/
-.not-found-page .not-found {
+.not-found-page {
   text-align: center;
+}
+.not-found-page .not-found {
   color: #27ca7d;
-  margin-bottom: 4rem;
+  font-size: var(--biggest-font-size);
+}
+.not-found-page img {
+  width: 400px;
+  margin-block: 4rem;
 }
 
 /*=============== CART PAGE ===============*/
@@ -1469,4 +1476,85 @@ svg {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* ... SCREEN*//*# sourceMappingURL=style.css.map */
+/* ... SCREEN*/
+/*=============== PRODUCT DETAILS PAGE ===============*/
+.product-details-page .product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.product-details-page .product .image {
+  width: 46%;
+}
+.product-details-page .product .content {
+  width: 46%;
+  align-self: flex-start;
+}
+.product-details-page .product .content .title {
+  font-size: var(--biggest-font-size);
+  color: #253d4e;
+}
+.product-details-page .product .content .rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  margin-block: 1.2rem;
+}
+.product-details-page .product .content .rating .stars {
+  color: #fb9419;
+}
+.product-details-page .product .content .rating .rate-num {
+  color: #253d4e;
+  font-size: var(--normal-font-size);
+}
+.product-details-page .product .content .info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column;
+}
+.product-details-page .product .content .info .add-btn {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #27ca7d;
+  font-weight: 600;
+  font-size: var(--h3-font-size);
+  background-color: #d4eee2;
+  width: 100%;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+.product-details-page .product .content .info .add-btn:hover .icon {
+  transform: translate(0);
+}
+.product-details-page .product .content .info .add-btn .icon {
+  transform: translate(-50px);
+  transition: transform 0.5s;
+}
+.product-details-page .product .content .info .price {
+  font-size: var(--h2-font-size);
+  color: #253d4e;
+  font-weight: 600;
+}
+.product-details-page .product .content .info .description {
+  line-height: 1.5;
+  color: #8a8f93;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/*=============== MEDIUM ===============*/
+@media (max-width: 768px) {
+  .product-details-page .product {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .product-details-page .product .content {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

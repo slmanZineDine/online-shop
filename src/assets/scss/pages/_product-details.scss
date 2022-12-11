@@ -1,0 +1,73 @@
+@use "../abstracts/" as *;
+/*=============== PRODUCT DETAILS PAGE ===============*/
+.product-details-page {
+   .product {
+      @include flex(center, space-between, 0.5rem);
+      .image {
+         width: 46%;
+      }
+      .content {
+         width: 46%;
+         align-self: flex-start;
+         .title {
+            font-size: var(--biggest-font-size);
+            color: $title-color;
+         }
+         .rating {
+            @include flex(center, flex-start, 0.7rem);
+            margin-block: 1.2rem;
+            .stars {
+               color: #fb9419;
+            }
+            .rate-num {
+               color: $title-color;
+               font-size: var(--normal-font-size);
+            }
+         }
+         .info {
+            @include flex(flex-start, space-between, 1rem);
+            flex-direction: column;
+            .add-btn {
+               padding: 1rem;
+               @include flex(center, center, 0.5rem);
+               color: $primary-color;
+               font-weight: $font-bold;
+               font-size: var(--h3-font-size);
+               background-color: #d4eee2;
+               width: 100%;
+               border-radius: 0.4rem;
+               overflow: hidden;
+               &:hover {
+                  .icon {
+                     transform: translate(0);
+                  }
+               }
+               .icon {
+                  transform: translate(-50px);
+                  transition: transform 0.5s;
+               }
+            }
+            .price {
+               font-size: var(--h2-font-size);
+               color: $title-color;
+               font-weight: $font-bold;
+            }
+            .description {
+               line-height: 1.5;
+               color: $text-color;
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/*=============== MEDIUM ===============*/
+@media (max-width: 768px) {
+   .product-details-page .product {
+      flex-direction: column;
+      row-gap: 1.5rem;
+   }
+   .product-details-page .product .content {
+      width: 100%;
+   }
+}

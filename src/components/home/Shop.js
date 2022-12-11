@@ -42,10 +42,20 @@ const Shop = () => {
             <div className="products-list">
                {productsByCategories.length
                   ? productsByCategories.map((e) => (
-                       <Product key={e.id} item={e} hasBtn={true} />
+                       <Product
+                          key={e.id}
+                          item={e}
+                          hasBtn={true}
+                          openProductView={true}
+                       />
                     ))
                   : products.map((e) => (
-                       <Product key={e.id} item={e} hasBtn={true} />
+                       <Product
+                          key={e.id}
+                          item={e}
+                          hasBtn={true}
+                          openProductView={true}
+                       />
                     ))}
             </div>
          </div>

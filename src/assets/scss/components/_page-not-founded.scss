@@ -1,9 +1,13 @@
 @use "../abstracts/" as *;
 /*=============== NOT FOUNDED PAGE ===============*/
 .not-found-page {
+   text-align: center;
    .not-found {
-      text-align: center;
       color: $primary-color;
-      margin-bottom: 4rem;
+      font-size: var(--biggest-font-size);
+   }
+   img {
+      width: 400px;
+      margin-block: 4rem;
    }
 }

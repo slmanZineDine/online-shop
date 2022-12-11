@@ -4,6 +4,7 @@ import Delivery from "./components/Delivery";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PageNotFounded from "./components/PageNotFounded";
+import ProductDetails from "./components/ProductDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<PageNotFounded />} />
+            <Route path="products/:productId" element={<ProductDetails />} />
          </Routes>
          <Delivery />
          <Footer />
