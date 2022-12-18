@@ -2,42 +2,8 @@ import Intro from "../components/Intro";
 import product from "../assets/img/product.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { services, stats } from "../data/data";
-import { useState } from "react";
-import { useRef } from "react";
 
 const About = () => {
-   // const statsEle = useRef(null);
-   // const [started, setStarted] = useState(false);
-   // console.log(statsEle.current.offsetTop);
-   // console.log(statsEle.current.offsetWidth);
-   // const [numbers, setNumbers] = useState([0, 0, 0, 0]);
-   // window.onscroll = () => {
-   // console.log(window.scrollY);
-   // console.log(statsEle.current.offsetTop);
-   // if (window.scrollY >= statsEle.current.offsetTop) {
-   //    if (!started) {
-   //       numbers.forEach((e, i) => {
-   //          const goal = setInterval(() => {
-   //             let newArr = [];
-   //             console.log("one");
-   //             setNumbers((p) => {
-   //                console.log("two");
-   //                newArr = [...p];
-   //                newArr[i] += 1;
-   //                return newArr;
-   //             });
-   //             console.log("three");
-   // console.log(numbers[i] === stats[i].number);
-   // console.log(newArr[i]);
-   // console.log(stats[i].number);
-   //                if (numbers[i] === stats[i].number) clearInterval(goal);
-   //             }, 2000);
-   //          });
-   //       }
-   //       setStarted(true);
-   //    }
-   // };
-   // console.log("Render");
    return (
       <main className="about-page">
          <Intro
@@ -65,16 +31,16 @@ const About = () => {
                </div>
             </div>
          </section>
-         {/* <section className="section stats" ref={statsEle}>
+         <section className="section stats">
             <div className="container">
                {stats.map((e, i) => (
                   <div className="box" key={i}>
-                     <div className="number">{numbers[i]}k</div>
+                     <div className="number">{e.number}k</div>
                      <div className="title">{e.title}</div>
                   </div>
                ))}
             </div>
-         </section> */}
+         </section>
       </main>
    );
 };
